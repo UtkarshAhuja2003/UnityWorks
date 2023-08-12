@@ -1,9 +1,38 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import {AiOutlineArrowLeft,AiOutlineMail} from "react-icons/ai"
 import { FaDownload } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 
 const Profile = () => {
+  
+  const navigate = useNavigate();
+  const [isCandidate, setIsCandidate] = useState(false);
+  useEffect(() => {
+    const roleFromLocalStorage = localStorage.getItem("role");
+    if (roleFromLocalStorage === "candidate") {
+      setIsCandidate(true);
+    } else {
+      setIsCandidate(false);
+    }
+  }, []);
+  const [data, setData] = useState();
+  // let data={}
+  useEffect(() => {
+    fetch("http://192.168.206.54:5000/candidate/dashboard", {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("jwt"),
+      },
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setData(result.candidate);
+        console.log(result.candidate);
+        console.log("result", result);
+        console.log("data", data);
+      });
+  }, []);
+
   var skills = [
       {
         "name": "Programming"
@@ -33,18 +62,18 @@ const Profile = () => {
         );
       });
     }
-    
+    function display (data){
+      return <div className='bg-[#F2F6FF] mt-0'>
 
-  return (
-    <div className='bg-[#F2F6FF] mt-0'>
       <div className='w-[90%] mx-auto pt-4 text-gray-500 font-[600] flex'>
         <AiOutlineArrowLeft className='mt-[5px]'/>
         <h1 className='ml-2'>Back</h1>
+        {/* {console.log(data.name)} */}
       </div>
       <div className='md:flex w-[87%] mx-auto mt-4 justify-between'>
         <div className='md:w-[28%] rounded-xl shadow-lg bg-[#ffffff] pt-4 pb-0 md:py-0'>
         <img className='shadow-xl mt-12 mx-auto w-36 h-36 rounded-full' src="https://cdn.dribbble.com/users/1297166/screenshots/9955321/media/3c4e377a7cefeaf2b518eb55541871b9.jpg" alt="basfdksb" />
-        <h1 className='text-[#43b18d] text-center text-lg font-[700] mt-4'>Ananya Grover</h1>
+       <h1 className='text-[#43b18d] text-center text-lg font-[700] mt-4'>{data.name}</h1>
         <h1 className='text-[#989898] text-center text-[1rem] font-[600]'>UI/UX Designer</h1>
         <p className='text-center text-[#989898] w-[80%] mx-auto mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur, accusamus ratione repellat sunt sit unde accusantium possimus porro doloremque, corrupti numquam, voluptas impedit eum corporis veniam magni odio.</p>
         <div className='mt-3'>
@@ -98,16 +127,26 @@ const Profile = () => {
 
           </div>
           </div>
-        
-
-
-
 
         </div>
 
       </div>
     </div>
-  )
+    }
+    
+
+    const renderContent = () => {
+      if (isCandidate) {
+        return <div>{display(data)}</div>;
+      } else {
+        navigate("/candidate/login");
+        return null; // or render a loading state while navigating
+      }
+    };
+    
+    return(
+       <>{renderContent()}</>
+    );
 }
 
 export default Profile

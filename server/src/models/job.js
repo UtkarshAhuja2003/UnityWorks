@@ -29,14 +29,6 @@ const jobSchema = new mongoose.Schema({
             }
         }
     ],
-    lowerSalary:{
-        type:Number,
-        required:[true,"Please enter a lowerSalary"]
-    },
-    upperSalary:{
-        type:Number,
-        required:[true,"Please enter a upperSalary"]
-    },
     jobType:{
         type:String,
         required:[true,"Please enter a Job Type"]

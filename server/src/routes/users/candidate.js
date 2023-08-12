@@ -17,7 +17,7 @@ router.post("/signupCandidate", async (req, res) => {
         gender,
         dob,
         bio,
-        photo,
+        image,
         resume
       } = req.body;
   
@@ -36,13 +36,15 @@ router.post("/signupCandidate", async (req, res) => {
         gender,
         dob,
         bio,
-        photo,
+        image,
         resume
       });
      
-    
-    
       await candidate.save();
+      const token = jwt.sign({ _id: candidate._id },"fjhaoiiiiiiiiiiiiinsdiiiiiiiiiiiiiiiiiiiiiiiiiiif");
+    const { _id, name: candidateName, email: candidateEmail } = candidate;
+    res.status(201).json({ token, user: { _id, name: candidateName, email: candidateEmail } });
+    console.log(token)
       console.log("candidate registered")
     } catch (e) {
       console.log(e);
@@ -63,7 +65,7 @@ if(!email || !password){
     bcrypt.compare(password,savedUser.password).then(doMatch=>{
         if(doMatch){
             console.log("successfully signin")
-            const token = jwt.sign({_id:savedUser._id},process.env.CANDIDATE_SECRET_KEY);
+            const token = jwt.sign({_id:savedUser._id},"fjhaoiiiiiiiiiiiiinsdiiiiiiiiiiiiiiiiiiiiiiiiiiif");
             console.log(token)
             const {_id , name , email} = savedUser
             res.json({token , user:{_id , name,email}})
@@ -77,7 +79,7 @@ if(!email || !password){
   })
 })
 
-router.get("/candidate/profile", candidateauth  , async (req, res) => {
+router.get("/candidate/dashboard",candidateauth, async (req, res) => {
   const candidate = await Candidate.findById(req.user._id);
   res.status(200).json({
     success:true,

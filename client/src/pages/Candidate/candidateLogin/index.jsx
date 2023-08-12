@@ -1,34 +1,76 @@
 import React from 'react';
-import image from "../../../assets/signin.png"
+import image from "../../../assets/signin.png";
+import axios from 'axios';
+import { useState } from 'react';
+import './style.css'; 
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import LockPersonIcon from '@mui/icons-material/LockPerson';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate=useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+    try {
+      const response = await axios.post('/api/v1/signinCandidate', { email, password });
+      const { token, user } = response.data;
+      localStorage.setItem("jwt", token);
+            localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem("role","candidate")
+
+      // You can save the token and user data to your state or context for authentication purposes
+      console.log('Logged in:', user);
+      navigate('/candidate/dashboard');
+    
+    } catch (error) {
+      console.error('Login error:', error.response.data.error);
+    }
+  };
+
   return (
-      <div className='flex mt-4 w-[95%] px-[5%] mx-auto mt-6 bg-white shadow-xl rounded-lg'>
-        <div className='w-[45%]'>
-          <img src={image} alt="" />
-        </div>
-        <div style={{ padding: '0 20px', height: '550px' }} className='w-[45%] mt-20'>
-        <div className='ml-auto ' style={{ background: '#fff', borderRadius: '5px', boxShadow: '0px 4px 10px 1px rgba(0,0,0,0.1)' }}>
-          <div style={{ height: '90px', background: '#43B18D', borderRadius: '5px 5px 0 0', color: '#ffffff', fontSize: '30px', fontWeight: '600', display: 'flex', alignItems: 'center', justifyContent: 'center', animation: 'fadeInDown 1s' }}>
+    <div className='login-container'>
+      <div className='image-container'>
+        <img src={image} alt="" />
+      </div>
+      <div className='form-container'>
+        <div className='form-box'>
+          <div className='form-header'>
             <span>Sign In</span>
           </div>
-          <form style={{ padding: '20px 25px 25px 25px', animation: 'fadeInUp 2s', width: '400px', height: '300px' }} action="#">
-            <div style={{ height: '45px', marginBottom: '15px', position: 'relative', padding: '7px' }}>
-              <i style={{ position: 'absolute', width: '47px', height: '100%', color: '#fff', fontSize: '18px', background: '#16a085', border: '1px solid #16a085', borderRadius: '5px 0 0 5px', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="fas fa-user"></i>
-              <input style={{ height: '100%', width: '100%', outline: 'none', paddingLeft: '60px', borderRadius: '5px', border: '1px solid lightgrey', fontSize: '16px', transition: 'all 1s ease' }} type="text" placeholder="Email or Phone" required/>
+          <form onSubmit={handleLogin}>
+            <div className='input-container'>
+              <AlternateEmailIcon />
+              <input
+                type="text"
+                placeholder="Email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
-            <div style={{ height: '45px', marginBottom: '15px', position: 'relative', padding: '7px' }}>
-              <i style={{ position: 'absolute', width: '47px', height: '100%', color: '#fff', fontSize: '18px', background: '#16a085', border: '1px solid #16a085', borderRadius: '5px 0 0 5px', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="fas fa-lock"></i>
-              <input style={{ height: '100%', width: '100%', outline: 'none', paddingLeft: '60px', borderRadius: '5px', border: '1px solid lightgrey', fontSize: '16px', transition: 'all 1s ease' }} type="password" placeholder="Password" required/>
+            <div className='input-container'>
+              <LockPersonIcon />
+              <input
+                type="password"
+                placeholder="Password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
-            <div style={{ textAlign: 'center', marginTop: '20px', fontSize: '17px' }}>
-              Not a member? <button style={{ color: '#16a085', textDecoration: 'none', background: 'none', border: 'none', cursor: 'pointer' }} id="registerCandidate">Register as Seeker</button> <button style={{ color: '#16a085', textDecoration: 'none', background: 'none', border: 'none', cursor: 'pointer' }} id="registerOrganisation">Register as an Organisation</button>
+            <button type="submit" className='submit-button'>Submit</button>
+            <div className='registration-links'>
+              Not a member?{' '}
+              <button className='registration-button' id="registerCandidate">Register as Candidate</button>{' '}
+              <button className='registration-button' id="registerOrganisation">Register as an Organisation</button>
             </div>
           </form>
         </div>
       </div>
-
-      </div>
+    </div>
   );
 };
 

@@ -1,142 +1,133 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body styles */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  /* Form container */
-  .form-container {
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%; 
-    max-width: 120rem; 
-    margin: 0 auto; 
-  }
-  
-  /* Heading styles */
-  .form-container h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #333333;
-  }
-  
-  /* Input container */
-  .form-container .job {
-    display: inline-flex;
-    flex-direction: column;
-  }
-  
-  /* Icon styles */
-  .form-container svg {
-    fill: #43b18d;
-    vertical-align: middle;
-    margin-right: 10px;
-    display: inline-block;
-  }
-  
-  .jobTitle {
-    margin-bottom: 10px;
-  }
-  
-  /* Input styles */
-  .form-container input[type="text"],
-  .form-container select {
-    flex: 1;
-    padding: 12px 14px;
-    border: 50%;
-    outline: none;
-    border-radius: 6px;
-    transition: border-color 0.3s ease-in-out;
-    display: inline-block;
-    vertical-align: middle;
-  }
-  
-  .form-container input[type="text"]:focus,
-  .form-container select:focus {
-    border-color: #43b18d;
-  }
-  
-  /* Select styles */
-  .form-container select {
-    width: 100%;
-    margin: 12px 0;
-  }
-  
-  /* Submit button styles */
-  .form-container button[type="button"] {
-    border: none;
-    background-color: #8cd4bc;
-    color: white;
-    font: 300 0.9vmax "Roboto";
-    width: 100%;
-    padding: 0.8vmax;
-    cursor: pointer;
-    transition: all 0.5s;
-    border-radius: 4px;
-    outline: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
-  }
-  
-  .form-container button[type="button"]:hover {
-    background-color: #43b18d;
-  }
-  
-  /* Dropdown container */
-  .form-container .category,
-  .form-container .responsibility,
-  .form-container .job.type {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  /* Icon styles */
-  .form-container .category svg,
-  .form-container .responsibility svg,
-  .form-container .job.type svg {
-    fill: #43b18d;
-    margin-right: 10px;
-  }
-  
-  /* Select styles */
-  .form-container .category select,
-  .form-container .responsibility input[type="text"],
-  .form-container .job.type select {
-    flex: 1;
-    padding: 12px 14px;
-    border: 1px solid #ccc; /* Adding a border for consistency */
-    outline: none;
-    border-radius: 6px;
-    transition: border-color 0.3s ease-in-out;
-  }
-  
-  .form-container .category select:focus,
-  .form-container .responsibility input[type="text"]:focus,
-  .form-container .job.type select:focus {
-    border-color: #43b18d;
-  }
-  
-  @media screen and (max-width: 600px) {
-    .form-container button[type="button"] {
-      /* Adjust button styles for smaller screens */
-      font-size: 14px; /* Example font size adjustment */
-      padding: 10px; /* Example padding adjustment */
-    }
-  
-    .form-container button[type="button"]:hover {
-      /* Adjust button hover styles for smaller screens */
-      background-color: #43b18d;
-    }
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Form container */
+.form-container {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the form vertically */
+}
+
+/* Heading styles */
+.form-container h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+/* Input container */
+.form-container .job {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+/* Icon styles */
+.form-container svg {
+  fill: #43b18d;
+  vertical-align: middle;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.jobTitle {
+  margin-bottom: 10px;
+}
+
+/* Input styles */
+.form-container input[type="text"],
+.form-container select {
+  flex: 1;
+  padding: 12px 14px;
+  border: 50%;
+  outline: none;
+  border-radius: 6px;
+  transition: border-color 0.3s ease-in-out;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.form-container input[type="text"]:focus,
+.form-container select:focus {
+  border-color: #43b18d;
+}
+
+/* Select styles */
+.form-container select {
+  width: 100%;
+  margin: 12px 0;
+}
+
+/* Submit button styles */
+.form-container button {
+  border: none;
+  background-color: #8cd4bc;
+  color: white;
+  font: 300 0.9vmax "Roboto";
+  width: 100%;
+  padding: 0.8vmax;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+  margin-top: 20px; /* Add margin to separate the button from other elements */
+}
+
+.form-container button:hover {
+  background-color: #43b18d;
+}
+
+/* Dropdown container */
+.form-container .category,
+.form-container .responsibility,
+.form-container .job.type {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Icon styles */
+.form-container .category svg,
+.form-container .responsibility svg,
+.form-container .job.type svg {
+  fill: #43b18d;
+  margin-right: 10px;
+}
+
+/* Select styles */
+.form-container .category select,
+.form-container .responsibility input[type="text"],
+.form-container .job.type select {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid #ccc; /* Adding a border for consistency */
+  outline: none;
+  border-radius: 6px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-container .category select:focus,
+.form-container .responsibility input[type="text"]:focus,
+.form-container .job.type select:focus {
+  border-color: #43b18d;
+}

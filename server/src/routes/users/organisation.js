@@ -14,10 +14,8 @@ router.post("/signupOrganisation", async (req, res) => {
         password,
         mobile,
         location,
-        aboutUs,
-        photo,
-        companySize,
-        industry,
+        about,
+        image,
       } = req.body;
   
       Organisation.findOne({ email: email }).then((savedOrganisation) => {
@@ -32,15 +30,17 @@ router.post("/signupOrganisation", async (req, res) => {
         password,
         mobile,
         location,
-        aboutUs,
-        photo,
-        companySize,
-        industry
+        about,
+        image,
       });
      
     
     
       await organisation.save();
+      const token = jwt.sign({ _id: organisation._id },"fjhaoiiiiiiiiiiiiinsdiiiiiiiiiiiiiiiiiiiiiiiiiiif");
+    const { _id, name: organisationName, email: organisationEmail  } = organisation;
+    res.status(201).json({ token, user: { _id, name: organisationName, email: organisationEmail } });
+    console.log(token)
       console.log("organisation registered")
     } catch (e) {
       console.log(e);
@@ -61,7 +61,7 @@ router.post("/signinOrganisation",async(req,res)=>{
     bcrypt.compare(password,savedOrganisation.password).then(doMatch=>{
         if(doMatch){
             console.log("successfully signin")
-            const token = jwt.sign({_id:savedOrganisation._id},process.env.ORGANISATION_SECRET_KEY);
+            const token = jwt.sign({_id:savedOrganisation._id},"fjhaoiiiiiiiiiiiiinsdiiiiiiiiiiiiiiiiiiiiiiiiiiif");
             console.log(token)
             const {_id , name , email} = savedOrganisation
             res.json({token , user:{_id , name,email}})
@@ -75,7 +75,7 @@ router.post("/signinOrganisation",async(req,res)=>{
   })
 })
 
-router.get("/organisation/profile", organisationauth  , async (req, res) => {
+router.get("/organisation/dashboard", organisationauth  , async (req, res) => {
     const organisation = await Organisation.findById(req.user._id);
     res.status(200).json({
       success:true,

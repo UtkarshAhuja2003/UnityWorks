@@ -25,7 +25,7 @@ const candidateSchema = new mongoose.Schema({
     },
     resume:{
         type:String,
-        required:[true , "Please provide your resume"],
+        // required:[true , "Please provide your resume"],
     },
     disability:{
         type:String,
@@ -43,9 +43,9 @@ const candidateSchema = new mongoose.Schema({
         type:String,
         required:[true, "Please enter about yourself"]
     },
-    photo:{
+    image:{
         type:String,
-        required:[true, "Please enter your photo"]
+        // required:[true, "Please enter your photo"]
     },
     groups:[
         {

@@ -12,6 +12,7 @@ import CandProfile from '../src/pages/Candidate/profile';
 import CandApplications from "../src/pages/Candidate/applications"
 import JobsPosted from '../src/pages/Organisation/jobsPosted';
 import Applicants from '../src/pages/Organisation/applicants';
+import Jobs from '../src/pages/Jobs';
 
 const App = () => {
   return (
@@ -23,12 +24,13 @@ const App = () => {
         <Route path='/candidate/login' element={<CandLogin/>} />
         <Route path='/candidate/register' element={<CandRegister/>} />
         <Route path='/organisation/register' element={<OrgRegister/>} />
-        <Route path='/organisation/postjob' element={<PostJob/>} />
+        {/* <Route path='/organisation/postjob' element={<PostJob/>} /> */}
         <Route path='/organisation/dashboard' element={<OrgProfile/>} /> 
         <Route path='/candidate/dashboard' element={<CandProfile/>} /> 
         <Route path='/candidate/applications' element={<CandApplications/>} />
         <Route path='/organisation/jobs' element={<JobsPosted/>} />
         <Route path='/organisation/applicants' element={<Applicants/>} />
+        <Route path='/jobs' element={<Jobs/>} />
       </Routes>
     </div>
   );

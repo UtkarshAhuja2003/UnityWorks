@@ -27,21 +27,13 @@ const organisationSchema = new mongoose.Schema({
         type:String,
         required:[true , "Please enter your location"], 
     },
-    aboutUs:{
+    about:{
         type:String,
         required:[true , "Please enter your details"], 
     },
-    photo:{
+    image:{
         type:String,
         required:[true , "Please enter your photo"], 
-    },
-    companySize:{
-        type:String,
-        required:[true , "Please enter your comapany size"], 
-    },
-    industry:{
-        type:String,
-        required:[true , "Please enter your industry type"], 
     },
     jobs:[
         {
