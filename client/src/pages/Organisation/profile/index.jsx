@@ -17,7 +17,7 @@ const Profile = () => {
   }, []);
   const [data, setData] = useState();
   useEffect(() => {
-    fetch("http://localhost:5000/organisation/dashboard", {
+    fetch("https://unityworks-backend.onrender.com/organisation/dashboard", {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       },

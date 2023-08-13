@@ -66,7 +66,7 @@ const Register = () => {
             bio,
           } = values;
     
-          fetch("http://localhost:5000/signupCandidate", {
+          fetch("https://unityworks-backend.onrender.com/signupCandidate", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"

@@ -33,7 +33,7 @@ const navigate = useNavigate()
   const [skill, setSkill] = useState("");
 
   function postData() {
-      fetch("http://localhost:5000/api/v1/jobsPost", {
+      fetch("https://unityworks-backend.onrender.com/api/v1/jobsPost", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
