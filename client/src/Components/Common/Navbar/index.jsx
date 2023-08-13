@@ -8,10 +8,10 @@ import {AiOutlineArrowLeft,AiOutlineMail,AiOutlineUnorderedList} from "react-ico
 const Navbar = () => {
   let Links = [
     { name: "Home", link: "/" },
-    { name: "About", link: "/" },
+    { name: "About", link: "#about" },
     { name: "Jobs", link: "/jobs" },
     // { name: "Job listings", link: "/news" },
-    { name: "Contact", link: "/" },
+    { name: "Contact", link: "#contact" },
   ];
 
   let [open, setOpen] = useState(false);

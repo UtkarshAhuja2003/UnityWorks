@@ -20,7 +20,13 @@ const index = () => {
             </p>
             <Link to="/candidate/login">
             <button className="mt-4 flex border border-1 ease-in-out duration-300 border-[#43b18d] hover:text-[#43b18d] items-center py-2 px-4 bg-[#43b18d] hover:bg-white text-white rounded">
-              Sign in
+              Sign in as Applicant
+            </button>
+            
+            </Link>
+            <Link to='/oganisation/login' >
+            <button className="mt-4 flex border border-1 ease-in-out duration-300 border-[#43b18d] hover:text-[#43b18d] items-center py-2 px-4 bg-[#43b18d] hover:bg-white text-white rounded">
+              Sign in as Recruiter
             </button>
             </Link>
           </div>

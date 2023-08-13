@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import {AiOutlineArrowLeft,AiOutlineMail} from "react-icons/ai"
 import { FaDownload } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const Profile = () => {
@@ -27,12 +28,13 @@ const Profile = () => {
       .then((res) => res.json())
       .then((result) => {
         setData(result.candidate);
-        console.log("jkngoisgsogvsbjogwf");
         console.log("result", result);
         console.log("data", data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
       });
   }, []);
-
   var skills = [
       {
         "name": "Programming"
@@ -73,7 +75,7 @@ const Profile = () => {
       <div className='md:flex w-[87%] mx-auto mt-4 justify-between'>
         <div className='md:w-[28%] rounded-xl shadow-lg bg-[#ffffff] pt-4 pb-0 md:py-0'>
         <img className='shadow-xl mt-12 mx-auto w-36 h-36 rounded-full' src="https://cdn.dribbble.com/users/1297166/screenshots/9955321/media/3c4e377a7cefeaf2b518eb55541871b9.jpg" alt="basfdksb" />
-       {/* <h1 className='text-[#43b18d] text-center text-lg font-[700] mt-4'>{data.name}</h1> */}
+       <h1 className='text-[#43b18d] text-center text-lg font-[700] mt-4'>testname</h1>
         <h1 className='text-[#989898] text-center text-[1rem] font-[600]'>UI/UX Designer</h1>
         <p className='text-center text-[#989898] w-[80%] mx-auto mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur, accusamus ratione repellat sunt sit unde accusantium possimus porro doloremque, corrupti numquam, voluptas impedit eum corporis veniam magni odio.</p>
         <div className='mt-3'>
@@ -110,7 +112,7 @@ const Profile = () => {
               </div>
               <div className='w-[33%] mt-3 pl-3'>
                   <h1 className='text-gray-500'>EMAIL</h1>
-                  <h1 className='text-black'>mdkaif@gmail.com</h1>
+                  <h1 className='text-black'>test@unityworks.com</h1>
               </div>
 
             </div>
@@ -119,10 +121,10 @@ const Profile = () => {
               <FaDownload className="mr-2" />
               Download Resume
             </button>
-            <button className="mt-3 md:mt-0 md:ml-3 flex border border-1 ease-in-out duration-300 border-[#43b18d] hover:text-white items-center py-2 px-4 hover:bg-[#43b18d] bg-white text-[#43b18d] rounded">
-              <AiOutlineMail className="mr-2" />
-              Send Email
-            </button>
+            <Link to='/candidate/applications'><button className="mt-3 md:mt-0 md:ml-3 flex border border-1 ease-in-out duration-300 border-[#43b18d] hover:text-white items-center py-2 px-4 hover:bg-[#43b18d] bg-white text-[#43b18d] rounded">
+              My Applications
+              
+            </button></Link>
             </div>
 
           </div>

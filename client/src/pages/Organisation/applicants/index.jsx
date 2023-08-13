@@ -11,23 +11,7 @@ const Applicants = () => {
     { name: 'Jane Smith', email: 'jane@example.com' },
     { name: 'Alice Johnson', email: 'alice@example.com' },
     { name: 'John Doe', email: 'john@example.com' },
-    { name: 'Jane Smith', email: 'jane@example.com' },
-    { name: 'Alice Johnson', email: 'alice@example.com' },
-    { name: 'John Doe', email: 'john@example.com' },
-    { name: 'Jane Smith', email: 'jane@example.com' },
-    { name: 'Alice Johnson', email: 'alice@example.com' },
-    { name: 'John Doe', email: 'john@example.com' },
-    { name: 'Jane Smith', email: 'jane@example.com' },
-    { name: 'Alice Johnson', email: 'alice@example.com' },
-    { name: 'John Doe', email: 'john@example.com' },
-    { name: 'Jane Smith', email: 'jane@example.com' },
-    { name: 'Alice Johnson', email: 'alice@example.com' },
-    { name: 'John Doe', email: 'john@example.com' },
-    { name: 'Jane Smith', email: 'jane@example.com' },
-    { name: 'Alice Johnson', email: 'alice@example.com' },
-    { name: 'John Doe', email: 'john@example.com' },
-    { name: 'Jane Smith', email: 'jane@example.com' },
-    { name: 'Alice Johnson', email: 'alice@example.com' }
+    { name: 'Jane Smith', email: 'jane@example.com' }
     // ... add more card data
   ];
 

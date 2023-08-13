@@ -4,7 +4,7 @@ import { faFacebookF, faTwitter, faGoogle, faInstagram, faLinkedin, faGithub } f
 
 const index = () => {
   return (
-    <div>
+    <div id='contact'>
 <footer class="text-center text-lg-start bg-white text-muted mt-12">
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
     <div className='flex justify-between w-[80%] mx-auto'>

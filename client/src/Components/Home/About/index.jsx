@@ -2,7 +2,7 @@ import React from 'react'
 
 const index = () => {
   return (
-    <div className='mt-8 w-[90%] mx-auto'>
+    <div id='about' className='mt-8 w-[90%] mx-auto'>
       <section class="py-16 px-4 bg-white">
     <div class="container mx-auto">
       <h2 class="text-2xl font-semibold mb-4 text-center">Our Mission</h2>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from "./card"; // Make sure to adjust the import path based on your project structure
+import Card from "../../../Components/Card"; // Make sure to adjust the import path based on your project structure
 
 const Jobs = () => {
   const jobData = [

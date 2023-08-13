@@ -60,11 +60,11 @@ const Login = () => {
               />
             </div>
             <button type="submit" className='submit-button'>Submit</button>
-            <div className='registration-links'>
+            {/* <div className='registration-links'>
               Not a member?{' '}
               <button className='registration-button' id="registerCandidate">Register as Candidate</button>{' '}
               <button className='registration-button' id="registerOrganisation">Register as an Organisation</button>
-            </div>
+            </div> */}
           </form>
         </div>
       </div>

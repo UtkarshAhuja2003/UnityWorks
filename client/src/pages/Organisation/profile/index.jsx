@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import {AiOutlineArrowLeft,AiOutlineMail,AiOutlineUnorderedList} from "react-icons/ai"
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
 
@@ -39,8 +40,8 @@ const Profile = () => {
     <div className='md:flex w-[87%] mx-auto mt-4 justify-between'>
       <div className='md:w-[28%]  rounded-xl shadow-lg bg-[#ffffff] pt-4 pb-0 md:pt-0  md:pb-6 '>
       <img className='shadow-xl mt-12 mx-auto w-36 h-36 rounded-full' src="https://cdn.dribbble.com/users/1297166/screenshots/9955321/media/3c4e377a7cefeaf2b518eb55541871b9.jpg" alt="basfdksb" />
-      <h1 className='text-[#43b18d] text-center text-lg font-[700] mt-4'>{data.name}</h1>
-      <p className='text-center text-[#989898] w-[80%] mx-auto mt-3'>{data.about}</p>
+      <h1 className='text-[#43b18d] text-center text-lg font-[700] mt-4'>Facebook</h1>
+      <p className='text-center text-[#989898] w-[80%] mx-auto mt-3'>We are a dynamic tech company at the forefront of innovation, driven by a passion for creating cutting-edge solutions. Our dedicated team blends expertise and creativity to craft transformative products that redefine possibilities in the digital landscape</p>
       </div>
       <div className='md:w-[70%]'>
         <div className=' rounded-xl shadow-lg bg-[#F2F6FF] bg-[#ffffff] w-full'>
@@ -57,7 +58,7 @@ const Profile = () => {
             </div> */}
             <div className='w-[33%] mt-3 pl-3'>
                 <h1 className='text-gray-500'>Contact</h1>
-                <h1 className='text-black'>{data.mobile}</h1>
+                <h1 className='text-black'>+91 9315167604</h1>
             </div>
             {/* <div className='w-[33%] mt-3 pl-3'>
                 <h1 className='text-gray-500'>Company Size</h1>
@@ -65,19 +66,20 @@ const Profile = () => {
             </div> */}
             <div className='w-[33%] mt-3 pl-3'>
                 <h1 className='text-gray-500'>LOCATION</h1>
-                <h1 className='text-black'>{data.location}</h1>
+                <h1 className='text-black'>Delhi</h1>
             </div>
             <div className='w-[33%] mt-3 pl-3'>
                 <h1 className='text-gray-500'>EMAIL</h1>
-                <h1 className='text-black'>{data.email}</h1>
+                <h1 className='text-black'>utkarsh@gmail.com</h1>
             </div>
 
           </div>
           <div className="md:flex pb-4 mt-3">
+          <Link to="/organisation/jobs">
           <button className="flex border border-1 ease-in-out duration-300 border-[#43b18d] hover:text-[#43b18d] items-center py-2 px-4 bg-[#43b18d] hover:bg-white text-white rounded">
             <AiOutlineUnorderedList className="mr-2" />
             Job  listings
-          </button>
+          </button></Link>
           <button className="mt-3 md:mt-0 md:ml-3 flex border border-1 ease-in-out duration-300 border-[#43b18d] hover:text-white items-center py-2 px-4 hover:bg-[#43b18d] bg-white text-[#43b18d] rounded">
             <AiOutlineMail className="mr-2" />
             Send Email
