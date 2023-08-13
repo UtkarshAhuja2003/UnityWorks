@@ -15,20 +15,16 @@ const jobSchema = new mongoose.Schema({
         type:String,
         required:[true , "Please enter the job responsibility"],
     },
-    skills:[
-        {
-            skill:{
-                type:String,
-            }
-        }
-    ],
-    disabilities:[
-        {
-            disability:{
-                type:String,
-            }
-        }
-    ],
+    skills:{
+        type:String,
+        required:[true , "Please enter the skills"],
+        
+    },
+    disabilities:{
+        type:String,
+        required: [true , "Please enter the job disability"],
+
+    },
     jobType:{
         type:String,
         required:[true,"Please enter a Job Type"]

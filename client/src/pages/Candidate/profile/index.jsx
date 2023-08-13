@@ -19,7 +19,7 @@ const Profile = () => {
   const [data, setData] = useState();
   // let data={}
   useEffect(() => {
-    fetch("http://192.168.206.54:5000/candidate/dashboard", {
+    fetch("http://localhost:5000/candidate/dashboard", {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       },
