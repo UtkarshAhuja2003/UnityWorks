@@ -6,10 +6,11 @@ import AssistWalkerIcon from '@mui/icons-material/AssistWalker';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "./style.css"
 
 const PostJob = () => {
-
+const navigate = useNavigate()
   const disabilities = [
     "Blind",
     "Handicap"

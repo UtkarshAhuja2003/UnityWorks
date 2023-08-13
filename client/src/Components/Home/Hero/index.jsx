@@ -6,6 +6,7 @@ import img1 from '../../../assets/1.png';
 import img2 from '../../../assets/2.png';
 import img3 from '../../../assets/3.png';
 import img4 from '../../../assets/4.png';
+import { Link } from "react-router-dom";
 
 const index = () => {
   return (
@@ -17,9 +18,11 @@ const index = () => {
             <p class="text-lg text-gray-600">
               Find the perfect job or hire the best talent with us.
             </p>
+            <Link to="/candidate/login">
             <button className="mt-4 flex border border-1 ease-in-out duration-300 border-[#43b18d] hover:text-[#43b18d] items-center py-2 px-4 bg-[#43b18d] hover:bg-white text-white rounded">
-              Get Started
+              Sign in
             </button>
+            </Link>
           </div>
         </section>
         <div>

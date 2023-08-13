@@ -27,7 +27,7 @@ const Profile = () => {
       .then((res) => res.json())
       .then((result) => {
         setData(result.candidate);
-        console.log(result.candidate);
+        console.log("jkngoisgsogvsbjogwf");
         console.log("result", result);
         console.log("data", data);
       });
@@ -73,7 +73,7 @@ const Profile = () => {
       <div className='md:flex w-[87%] mx-auto mt-4 justify-between'>
         <div className='md:w-[28%] rounded-xl shadow-lg bg-[#ffffff] pt-4 pb-0 md:py-0'>
         <img className='shadow-xl mt-12 mx-auto w-36 h-36 rounded-full' src="https://cdn.dribbble.com/users/1297166/screenshots/9955321/media/3c4e377a7cefeaf2b518eb55541871b9.jpg" alt="basfdksb" />
-       <h1 className='text-[#43b18d] text-center text-lg font-[700] mt-4'>{data.name}</h1>
+       {/* <h1 className='text-[#43b18d] text-center text-lg font-[700] mt-4'>{data.name}</h1> */}
         <h1 className='text-[#989898] text-center text-[1rem] font-[600]'>UI/UX Designer</h1>
         <p className='text-center text-[#989898] w-[80%] mx-auto mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore pariatur, accusamus ratione repellat sunt sit unde accusantium possimus porro doloremque, corrupti numquam, voluptas impedit eum corporis veniam magni odio.</p>
         <div className='mt-3'>
@@ -140,12 +140,12 @@ const Profile = () => {
         return <div>{display(data)}</div>;
       } else {
         navigate("/candidate/login");
-        return null; // or render a loading state while navigating
+        return null; 
       }
     };
     
     return(
-       <>{renderContent()}</>
+       <div>{renderContent()}</div>
     );
 }
 

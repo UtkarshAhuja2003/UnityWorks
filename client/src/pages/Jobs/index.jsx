@@ -11,66 +11,234 @@ export default function Index() {
     const jobData = [
         {
           id: 1,
-          title: "Job Title 1",
-          salary: "50k",
-          applicantsLink: "#",
-          jobLink: "#",
+          title: "Auditor",
+          salary: "20k",
           location: "Delhi",
           company: "Facebook",
-        },
-        {
-          id: 2,
-          title: "Job Title 2",
-          salary: "60k",
-          applicantsLink: "#",
-          jobLink: "#",
-          location: "Delhi",
-          company: "Facebook",
-        },{
-          id: 1,
-          title: "Job Title 1",
-          salary: "50k",
-          applicantsLink: "#",
-          jobLink: "#",
-          location: "Delhi",
-          company: "Facebook",
-        },
-        {
-          id: 2,
-          title: "Job Title 2",
-          salary: "60k",
-          applicantsLink: "#",
-          jobLink: "#",
-          location: "Delhi",
-          company: "Facebook",
-        },
-        {
-          id: 1,
-          title: "Job Title 1",
-          salary: "50k",
-          applicantsLink: "#",
-          jobLink: "#",
-          location: "Delhi",
-          company: "Facebook",
-        },
-        {
-          id: 2,
-          title: "Job Title 2",
-          salary: "60k",
-          applicantsLink: "#",
-          jobLink: "#",
-          location: "Delhi",
-          company: "Facebook",
+          category:"ASD"
 
         },
-        // Add more job objects as needed
+        {
+          id: 1,
+          title: "Technician",
+          salary: "60k",
+          location: "Delhi",
+          company: "Facebook",
+          category:"ASD"
+
+        },
+        {
+          id: 1,
+          title: "Carpenter",
+          salary: "30k",
+          location: "Delhi",
+          company: "Facebook",
+          category:"ASD"
+
+        },
+        {
+          id: 2,
+          title: "Music Teacher",
+          salary: "25k",
+          location: "Delhi",
+          company: "KV school",
+          category:"Blindness"
+
+        },
+        {
+          id: 2,
+          title: "Voice Actor",
+          salary: "60k",
+          location: "Delhi",
+          company: "T series",
+          category:"Blindness"
+
+        },
+        {
+          id: 2,
+          title: "Call center operator",
+          salary: "6k",
+          location: "Delhi",
+          company: "Facebook",
+          category:"Blindness"
+
+        },
+        {
+          id: 2,
+          title: "Radio Host",
+          salary: "115k",
+          location: "Mumbai",
+          company: "RedFM",
+          category:"Blindness"
+
+        },
+        {
+          id: 3,
+          title: "Video Editor",
+          salary: "60k",
+          location: "Delhi",
+          company: "T series",
+          category:"Deaf"
+
+        },
+        {
+          id: 3,
+          title: "Sign Language Teacher",
+          salary: "50k",
+          location: "Delhi",
+          company: "KV school",
+          category:"Deaf"
+
+        },
+        {
+          id: 3,
+          title: "Graphic Designer",
+          salary: "70k",
+          location: "Delhi",
+          company: "Uber",
+          category:"Deaf"
+
+        },
+        {
+          id: 3,
+          title: "Writer",
+          salary: "50k",
+          location: "Delhi",
+          company: "T series",
+          category:"Deaf"
+
+        },
+        {
+          id: 3,
+          title: "Social Media Manager",
+          salary: "60k",
+          location: "Delhi",
+          company: "Facebook",
+          category:"Deaf"
+
+        },
+        {
+          id: 3,
+          title: "Artist",
+          salary: "60k",
+          location: "Banglore",
+          company: "Pixels",
+          category:"Dyslexia"
+
+        },
+        {
+          id: 3,
+          title: "Visual Artist",
+          salary: "80k",
+          location: "Mumbai",
+          company: "Canva",
+          category:"Dyslexia"
+
+        },
+        {
+          id: 3,
+          title: "Photographer",
+          salary: "80k",
+          location: "Chennai",
+          company: "Adobe",
+          category:"Dyslexia"
+
+        },
+        {
+          id: 3,
+          title: "Interior Designer",
+          salary: "40k",
+          location: "Delhi",
+          company: "ArchTech",
+          category:"Dyslexia"
+
+        },
+        {
+          id: 2,
+          title: "Captioner",
+          salary: "19k",
+          location: "Delhi",
+          company: "Mr. Beast",
+          category:"Mute"
+        },
+        {
+          id: 2,
+          title: "Sales Marketing",
+          salary: "26k",
+          location: "Delhi",
+          company: "Vijay Sales",
+          category:"Mute"
+        },
+        {
+          id: 2,
+          title: "Cab Driver",
+          salary: "27k",
+          location: "Delhi",
+          company: "Ola",
+          category:"Mute"
+        },
+        {
+          id: 2,
+          title: "Craftman",
+          salary: "18k",
+          location: "Delhi",
+          company: "Agricultural Products Pvt. Ltd.",
+          category:"Parkinson"
+        },
+        {
+          id: 2,
+          title: "Potter",
+          salary: "15k",
+          location: "Haryana",
+          company: "Agricultural Products Pvt. Ltd.",
+          category:"Parkinson"
+
+        },
+        {
+          id: 2,
+          title: "LED Tester",
+          salary: "15k",
+          location: "Delhi",
+          company: "Havells",
+          category:"Parkinson"
+
+        },
+        {
+          id: 2,
+          title: "Receptionist",
+          salary: "25k",
+          location: "Bengaluru",
+          company: "City Healthcare",
+          category:"Physical Disorder"
+        },
+        {
+          id: 2,
+          title: "Cashier",
+          salary: "20k",
+          location: "Chennai",
+          company: "The Bakers",
+          category:"Physical Disorder"
+        },
+        {
+          id: 2,
+          title: "Voice Artist",
+          salary: "35k",
+          location: "Mumbai",
+          company: "T-Series",
+          category:"Physical Disorder"
+        },
       ];
   const [jobsList, setJobsList] = useState(jobData);
 
     let categories =[
-        {name:"Latest",id:0},
-        {name:"Full Time",id:1},
-        {name:"Part Time",id:2},
+      {name:"All",id:0},
+        {name:"ASD",id:1},
+        {name:"Blindness",id:2},
+        {name:"Deaf",id:3},  
+        {name:"Dyslexia",id:4},
+        {name:"Mute",id:5},
+        {name:"Parkinson",id:6},
+        {name:"Physical Disorder",id:7}  
       ];
 
     const [currentCategory, change] = useState(0);
@@ -121,9 +289,19 @@ export default function Index() {
     else if(currentCategory == 0)
     {newJobsList = jobsList;}
     else if(currentCategory == 1)
-    {newJobsList = jobsList.filter(data => data.status == "Past");}
+    {newJobsList = jobsList.filter(data => data.category == "ASD");}
     else if(currentCategory == 2)
-    {newJobsList = jobsList.filter(data => data.status == "Upcoming");}
+    {newJobsList = jobsList.filter(data => data.category == "Blindness");}
+    else if(currentCategory == 3)
+    {newJobsList = jobsList.filter(data => data.category == "Deaf");}
+    else if(currentCategory == 4)
+    {newJobsList = jobsList.filter(data => data.category == "Dyslexia");}
+    else if(currentCategory == 5)
+    {newJobsList = jobsList.filter(data => data.category == "Mute");}
+    else if(currentCategory == 6)
+    {newJobsList = jobsList.filter(data => data.category == "Parkinson");}
+    else if(currentCategory == 7)
+    {newJobsList = jobsList.filter(data => data.category == "Physical Disorder");}
     else {newJobsList = jobsList.filter(data => data.category == categories[currentCategory].name);}
     
     
@@ -132,7 +310,7 @@ export default function Index() {
   return (
     <div className='font-defaultFont'>
       <Navbar />
-      <div className='h-[75px] md:h-[140px]'></div>
+      <div className=''></div>
       <div className='w-[100%] md:w-[80%] mx-auto'>
         <div className='md:flex'>
             <div className='w-[80%] md:w-[27%] mx-auto'>
@@ -167,6 +345,7 @@ export default function Index() {
                     jobLinks ={data.jobLinks}
                     location={data.location}
                     company = {data.company}
+                    salary={data.salary}
                 />
               ))
             }
@@ -174,7 +353,6 @@ export default function Index() {
 
         </div>
       </div>
-      <Footer />
     </div>
   )
 }

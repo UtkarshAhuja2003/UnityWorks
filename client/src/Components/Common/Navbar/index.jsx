@@ -9,6 +9,7 @@ const Navbar = () => {
   let Links = [
     { name: "Home", link: "/" },
     { name: "About", link: "/" },
+    { name: "Jobs", link: "/jobs" },
     // { name: "Job listings", link: "/news" },
     { name: "Contact", link: "/" },
   ];
@@ -93,10 +94,10 @@ const Navbar = () => {
           
           {joinOpen && (
             <div className="w-[110px] absolute right-12 z-10 py-2 bg-[#f9f7f7]  text-theme rounded-lg mt-2">
-              <Link to="/signupAlumni" className="block px-2 py-1   hover:bg-[#dbe2ef]">
+              <Link to="/organisation/register" className="block px-2 py-1   hover:bg-[#dbe2ef]">
                 As Recruiter
               </Link>
-              <Link to="/signupStudent" className="block px-2 py-1 hover:bg-[#dbe2ef]">
+              <Link to="/candidate/register" className="block px-2 py-1 hover:bg-[#dbe2ef]">
               As Applicant
               </Link>
             </div>

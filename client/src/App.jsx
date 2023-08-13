@@ -13,10 +13,15 @@ import CandApplications from "../src/pages/Candidate/applications"
 import JobsPosted from '../src/pages/Organisation/jobsPosted';
 import Applicants from '../src/pages/Organisation/applicants';
 import Jobs from '../src/pages/Jobs';
+import Navbar from '../src/Components/Common/Navbar';
+import Footer from '../src/Components/Common/Footer';
+
 
 const App = () => {
   return (
     <div>
+      <Navbar/>
+      <div className='mt-32'>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/home' element={<Home/>} />
@@ -32,6 +37,8 @@ const App = () => {
         <Route path='/organisation/applicants' element={<Applicants/>} />
         <Route path='/jobs' element={<Jobs/>} />
       </Routes>
+        </div>      
+      <Footer/>
     </div>
   );
 };
